@@ -18,7 +18,7 @@ const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://gestion-de-stock-pjm7.onrender.com/"],
     methods: ["GET", "POST", 'PUT', 'DELETE'],
     credentials: true,
   })
