@@ -37,7 +37,7 @@ const Register = () => {
 
     // Make the POST request to the backend
     try {
-      const response = await fetch("http://localhost:4000/auth/register", {
+      const response = await fetch("https://gdserver-l3io.onrender.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

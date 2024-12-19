@@ -49,17 +49,17 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch Total Stock
-    axios.get('http://localhost:4000/order/status/Completed')
+    axios.get('https://gdserver-l3io.onrender.com/order/status/Completed')
       .then(response => setTotalStock(response.data.length))
       .catch(error => console.error('Error fetching total stock:', error));
 
     // Fetch Total Sales
-    axios.get('http://localhost:4000/sales')
+    axios.get('https://gdserver-l3io.onrender.com/sales')
       .then(response => setTotalSales(response.data.length))
       .catch(error => console.error('Error fetching total sales:', error));
 
     // Fetch Total Orders
-    axios.get('http://localhost:4000/order')
+    axios.get('https://gdserver-l3io.onrender.com/order')
       .then(response => setTotalOrders(response.data.length))
       .catch(error => console.error('Error fetching total orders:', error));
   }, []);

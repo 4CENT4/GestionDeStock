@@ -36,7 +36,7 @@ const Stock = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/order/status/Completed');
+        const response = await axios.get('https://gdserver-l3io.onrender.com/order/status/Completed');
         setOrderData(response.data);
         setFilteredData(response.data); 
         setLoading(false);
@@ -81,7 +81,7 @@ const Stock = () => {
     e.preventDefault();
 
     try {
-      await axios.put(`http://localhost:4000/order/update/${editOrder}`, newOrder);
+      await axios.put(`https://gdserver-l3io.onrender.com/order/update/${editOrder}`, newOrder);
       toast.success('Order updated successfully');
       setIsPopupOpen(false);
       window.location.reload(); 
@@ -93,7 +93,7 @@ const Stock = () => {
 
   const handleDeleteOrder = async (orderId) => {
     try {
-      await axios.delete(`http://localhost:4000/order/delete/${orderId}`);
+      await axios.delete(`https://gdserver-l3io.onrender.com/order/delete/${orderId}`);
       toast.success('Order deleted successfully');
       setOrderData(orderData.filter(order => order._id !== orderId)); 
       setFilteredData(filteredData.filter(order => order._id !== orderId)); 
