@@ -17,7 +17,7 @@ const UsersPage = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/users/getall');
+        const response = await axios.get('https://gdserver-l3io.onrender.com/users/getall');
         setUsers(response.data);
         setFilteredUsers(response.data);
         setLoading(false);
@@ -44,7 +44,7 @@ const UsersPage = () => {
 
   const handleDeleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:4000/users/delete/${userId}`);
+      await axios.delete(`https://gdserver-l3io.onrender.com/users/delete/${userId}`);
       toast.success('User deleted successfully');
       setUsers(users.filter(user => user._id !== userId));
       setFilteredUsers(filteredUsers.filter(user => user._id !== userId));

@@ -39,7 +39,7 @@ const SalesPage = () => {
 
   const fetchSales = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/sales/');
+      const response = await axios.get('https://gdserver-l3io.onrender.com/sales/');
       setSalesData(response.data);
       setFilteredData(response.data);
       setLoading(false);
@@ -78,12 +78,12 @@ const SalesPage = () => {
     try {
       if (editMode) {
         await axios.put(
-          `http://localhost:4000/sales/update/${newSale._id}`,
+          `https://gdserver-l3io.onrender.com/sales/update/${newSale._id}`,
           newSale
         );
         toast.success('Sale updated successfully');
       } else {
-        await axios.post('http://localhost:4000/sales/add', newSale);
+        await axios.post('https://gdserver-l3io.onrender.com/sales/add', newSale);
         toast.success('Sale added successfully');
       }
       setShowModal(false);
@@ -108,7 +108,7 @@ const SalesPage = () => {
 
   const handleDeleteSale = async (saleId) => {
     try {
-      await axios.delete(`http://localhost:4000/sales/delete/${saleId}`);
+      await axios.delete(`https://gdserver-l3io.onrender.com/sales/delete/${saleId}`);
       setSalesData((prev) => prev.filter((sale) => sale._id !== saleId));
       setFilteredData((prev) => prev.filter((sale) => sale._id !== saleId));
       toast.success('Sale deleted successfully');
